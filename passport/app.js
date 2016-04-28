@@ -7,11 +7,11 @@ var mongoose = require('mongoose');
 var path = require('path');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var http = require('http').Server(app);
-var io = require('node_modules/socket.io')(http);
+var app = express();
+var http = require('http').createServer(app);
+var io = require('socket.io').listen(http);
 // global config
 
-var app = express();
 app.set('port', process.env.PORT || 3001);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
