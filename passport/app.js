@@ -8,8 +8,9 @@ var path = require('path');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var app = express();
-var http = require('http').createServer(app);
-var io = require('socket.io').listen(http);
+var http = require('http');
+var server = http.createServer(app);
+var io = require('socket.io').listen(server);
 // global config
 
 app.set('port', process.env.PORT || 3001);
