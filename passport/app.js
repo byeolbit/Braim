@@ -8,7 +8,7 @@ var path = require('path');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var io = require('node_modules/socket.io')(http);
 // global config
 
 var app = express();
